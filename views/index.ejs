@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/public/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet">
@@ -30,8 +30,17 @@
 
             <div class="search">
                 <section class="hero-search">
-                <a><input type="text" name="search" class="locationtext" placeholder="Enter location..."></a>
-                </section>
+                <form action="/" method="POST">
+                <a><input type="text" name="search" type="sumbit" class="locationtext" placeholder="Enter location..."></a>
+               <button class="classified" type="submit">continue</button>
+            </form>
+         </section>
+         <% if(data !== null){ %>
+            <p><%= indexes %></p>
+          <% } %>
+          <% if(error !== null){ %>
+            <p><%= error %></p>
+          <% } %>
             </div>  
         </div>
 </body>
