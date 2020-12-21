@@ -1,22 +1,20 @@
 *{margin: 0;
     padding: 0;
-   
   }
 
-#cart{
-    font-size:20px;  
-    font-weight: bold;
-    float:left;
-    padding: 15px 30px;
-
+  * {
+    box-sizing: border-box;
   }
+
+/* Navbar styling */
   .stickynav{
     overflow:hidden;
     background-color:#3F403F;  
     width:100%; 
     color:white; 
-    position:sticky;
+    position: relative;
     top:0px;
+    font-family: 'Raleway', sans-serif;
   }
   
   nav a{
@@ -25,7 +23,7 @@
     float: right;
     font-size:18px; 
     padding: 20px 30px; 
-    display:inline-block; 
+    display:block; 
     transition: all 0.3s ease 0s;
   
   }
@@ -33,20 +31,25 @@
     background-color:#474A46; 
     color: #9FB8AD; 
   }
+
+
   /*-----HEADER----*/
   header{
     background-color:#475841; 
     text-align:center;
     padding:15px; 
     width: 100%;
+    font-family: 'Raleway', sans-serif;
   }
   
   header h1{
     margin:0px;
+    padding: 5px;
     font-size:30px; 
     color:#E6E8E6; 
     font-weight: 600 ;
-    font-family: 'Cinzel', serif;
+    font-family: 'Raleway', sans-serif;
+    
   }
   h1 span{
     font-weight:400;
@@ -55,52 +58,174 @@
   .navheader{
       color: #9FB8AD;
   }
-/*---BODY STYLING---*/
-.hero-image {
-    background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-    url(https://images.unsplash.com/photo-1425736317462-a103b1303a35?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
-    width:100vw;
-    height:100vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    position: relative;
-    
-   }
 
-.body{
-    background-color:#E6E8E6 ;
-}
 
+/*---Styles the searchbar font and alignment---*/
+
+.locationtext{
+    color: #3F403F;
+    text-emphasis: bold;
+    font-size:20px;  
+    float:left;
+    padding: 15px 30px;
+    font-family: 'Raleway', sans-serif;
+  }
+
+/*-----STYLES THE SEARCH  BAR-----*/
 input[type=text] {
     align-content: center;
-    width: 200px;
+    width: 500px;
     box-sizing: border-box;
-    border: 2px solid #3F403F;
-    border-radius: 4px;
+    border: 3px;
+    border-radius: 6px;
     font-size: 16px;
     background-color: #9FB8AD;
-    background-image: url('searchicon.png');
+    background-image: url('https://fontawesome.com/icons/location-arrow?style=solid');
     background-position: 10px 10px; 
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.3s ease-in-out;
-    transition: width 0.3s ease-in-out;
+    -webkit-transition: width 0.25s ease-in-out;
+    transition: width 0.25s ease-in-out;
   }
 
-  input[type=text]:shover {
-    width: 100%;
+  form.search button {
+    float: inline-end;
+    width: 20%;
+    padding: 10px;
+    background: #475841 ;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none; /* Prevent double borders */
+    cursor: pointer;
   }
 
+
+/* Makes the search bar expand when hovered over/is active */
+  input[type=text]:focus{
+    width: 600px;
+  }
+
+  input[type=text]:hover{
+    width: 600px;
+  }
+
+.hero-search{
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+  } 
+  .hero-text{
+    font-size: 3em;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color:white;
+    font-family: 'Raleway', sans-serif;
+  } 
+
+
+/* Carousel Styling */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+.pic-ctn {
+  width: 200vw;
+  height: 200px;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(200px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  30% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
+}
+
+.pic-crsl {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.pic-crsl > img {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  animation: display 30s infinite;
+}
+
+img:nth-child(2) {
+  animation-delay: 8s;
+}
+img:nth-child(3) {
+  animation-delay: 14s;
+}
+img:nth-child(4) {
+  animation-delay: 20s;
+}
+img:nth-child(5) {
+  animation-delay: 26s;
+}
+
+
+
+
+/* Responsive search bar and hero text */
   @media screen and (max-width: 600px) {
     .column {
     width: 100%;
     display: block;
     margin-bottom: 20px;
       }
+
+    input[type=text] {
+        width: 200px;
+        align-content: center;
+        box-sizing: border-box;
+        border: 3px;
+        border-radius: 6px;
+        font-size: 16px;
+        background-color: #9FB8AD;
+        background-image: url('https://fontawesome.com/icons/location-arrow?style=solid');
+        background-position: 10px 10px; 
+        background-repeat: no-repeat;
+        padding: 12px 20px 12px 40px;
+        -webkit-transition: width 0.25s ease-in-out;
+        transition: width 0.25s ease-in-out;  
+      }
+      input[type=text]:focus{
+        width: 400px;
+      }
+    
+      input[type=text]:hover{
+        width: 400px;
+      }
+
+      .hero-text{
+          font-size: 24px;
+      }
+
     }
 
-    .responsive {
-      width: 100%;
-      height: auto;
-    }
+    
